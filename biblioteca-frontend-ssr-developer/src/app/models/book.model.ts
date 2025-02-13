@@ -1,7 +1,7 @@
 export interface Book {
     id: number;
-    titulo: string,
-    autor: string,
-    genero: string,
-    disponibilidad: boolean
+    title: string,
+    author: string,
+    genre: string,
+    available: number
 }

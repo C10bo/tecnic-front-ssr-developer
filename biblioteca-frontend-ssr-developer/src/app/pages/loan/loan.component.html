@@ -22,7 +22,7 @@
   <div class="container">
     <div class="card" style="width: 18rem;">
       <div class="card-header">
-        Crear libro
+        Prestamo
       </div>
       <div class="card-body">
         <form [formGroup]="loanFormGroups">
@@ -36,7 +36,7 @@
           </div>
           <div class="form-group">
             <label for="fechaPrestamo">Fecha prestamo</label>
-            <input class="form-control" type="text" placeholder="Ingrese la fecha del Prestamo" formControlName="fechaPrestamo"
+            <input class="form-control" type="date" placeholder="Ingrese la fecha del Prestamo" formControlName="fechaPrestamo"
               id="fechaPrestamo" />
             <samp *ngIf="!loanFormGroups.controls['fechaPrestamo'].valid &&
                           (loanFormGroups.controls['fechaPrestamo'].dirty ||
@@ -44,7 +44,7 @@
           </div>
           <div class="form-group">
             <label for="libro">libro</label>
-            <input class="form-control" type="number" placeholder="Ingrese nombre del libro" formControlName="libro"
+            <input class="form-control" type="dropdown" placeholder="Ingrese id del libro" formControlName="libro"
               id="libro" />
             <samp *ngIf="!loanFormGroups.controls['libro'].valid &&
                               (loanFormGroups.controls['libro'].dirty ||
@@ -53,7 +53,7 @@
           </div>  
           <div class="form-group">
             <label for="fechaDevolucion">Fecha devolucion</label>
-            <input class="form-control" type="number" placeholder="Ingrese la fecha de devolucion" formControlName="fechaDevolucion"
+            <input class="form-control" type="date" placeholder="Ingrese la fecha de devolucion" formControlName="fechaDevolucion"
               id="fechaDevolucion" />
             <samp *ngIf="!loanFormGroups.controls['fechaDevolucion'].valid &&
                               (loanFormGroups.controls['fechaDevolucion'].dirty ||
@@ -61,13 +61,13 @@
               obligatorio</samp>
           </div>
           <br>
-          <button type="submit" class="btn btn-primary" [disabled]="
+          <button type="submit" class="btn btn-primary" (click)="editBook()" [disabled]="
                         !loanFormGroups.valid
-                      ">Crear libro</button>
+                      ">Prestar libro</button>
         </form>
       </div>
       <div class="alert alert-success" role="alert" *ngIf="messageCorrecto">
-        Producto creado correctamente.
+        Libro prestado correctamente.
       </div>
     </div>
     
