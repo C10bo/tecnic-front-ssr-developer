@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { BooksService } from '../../services/books.service';
+import { Book } from '../../models/book.model';
 
 @Component({
   selector: 'app-loan',
@@ -11,11 +13,12 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 })
 export class LoanComponent {
 
+  public selectedBook: Book | undefined;
   public loanFormGroups: FormGroup;
   messageCorrecto: Boolean = false;
 
 
-  constructor(private _formBuilder: FormBuilder) {
+  constructor(private booksService: BooksService, private _formBuilder: FormBuilder) {
   
       this.loanFormGroups = this._formBuilder.group({
         nombre: ["", Validators.compose([Validators.required])],
@@ -24,5 +27,15 @@ export class LoanComponent {
         fechaDevolucion: ["", Validators.compose([Validators.required])],
       }); 
     }
+
+    editBook() {
+    
+      this.booksService.editBook(this.selectedBook);
+  
+  
+  
+    }
+
+
 
 }

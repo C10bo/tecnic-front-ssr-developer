@@ -27,37 +27,37 @@
       <div class="card-body">
         <form [formGroup]="bookFormGroups">
           <div class="form-group">
-            <label for="titulo">Titulo</label>
+            <label for="title">Titulo</label>
             <input class="form-control" type="text" minlength="1" maxlength="50" placeholder="Ingrese titulo"
-              formControlName="titulo" id="titulo" />
-            <samp *ngIf="!bookFormGroups.controls['titulo'].valid &&
-                              (bookFormGroups.controls['titulo'].dirty ||
-                              bookFormGroups.controls['titulo'].touched)" style="color: red;">Campo obligatorio</samp>
+              formControlName="title" id="title" />
+            <samp *ngIf="!bookFormGroups.controls['title'].valid &&
+                              (bookFormGroups.controls['title'].dirty ||
+                              bookFormGroups.controls['title'].touched)" style="color: red;">Campo obligatorio</samp>
           </div>
           <div class="form-group">
-            <label for="autor">Autor</label>
-            <input class="form-control" type="text" placeholder="Ingrese del autor" formControlName="autor"
-              id="autor" />
-            <samp *ngIf="!bookFormGroups.controls['autor'].valid &&
-                          (bookFormGroups.controls['autor'].dirty ||
-                          bookFormGroups.controls['autor'].touched)" style="color: red;">Campo obligatorio</samp>
+            <label for="author">Autor</label>
+            <input class="form-control" type="text" placeholder="Ingrese del autor" formControlName="author"
+              id="author" />
+            <samp *ngIf="!bookFormGroups.controls['author'].valid &&
+                          (bookFormGroups.controls['author'].dirty ||
+                          bookFormGroups.controls['author'].touched)" style="color: red;">Campo obligatorio</samp>
           </div>
           <div class="form-group">
-            <label for="genero">Genero</label>
-            <input class="form-control" type="number" placeholder="Ingrese la genero" formControlName="genero"
-              id="genero" />
-            <samp *ngIf="!bookFormGroups.controls['genero'].valid &&
-                              (bookFormGroups.controls['genero'].dirty ||
-                              bookFormGroups.controls['genero'].touched)" style="color: red;">Campo
+            <label for="genre">Genero</label>
+            <input class="form-control" type="text" placeholder="Ingrese la genero" formControlName="genre"
+              id="genre" />
+            <samp *ngIf="!bookFormGroups.controls['genre'].valid &&
+                              (bookFormGroups.controls['genre'].dirty ||
+                              bookFormGroups.controls['genre'].touched)" style="color: red;">Campo
               obligatorio</samp>
           </div>
           <div class="form-group">
-            <label for="precio">Disponobilidad</label>
-            <input class="form-control" type="number" placeholder="Ingrese la cantidad" formControlName="precio"
-              id="precio" />
-            <samp *ngIf="!bookFormGroups.controls['precio'].valid &&
-                              (bookFormGroups.controls['precio'].dirty ||
-                              bookFormGroups.controls['precio'].touched)" style="color: red;">Campo obligatorio</samp>
+            <label for="available">Disponobilidad</label>
+            <input class="form-control" type="text" placeholder="Ingrese la cantidad" formControlName="available"
+              id="available" />
+            <samp *ngIf="!bookFormGroups.controls['available'].valid &&
+                              (bookFormGroups.controls['available'].dirty ||
+                              bookFormGroups.controls['available'].touched)" style="color: red;">Campo obligatorio</samp>
           </div>
   
           <br>

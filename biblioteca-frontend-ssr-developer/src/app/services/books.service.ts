@@ -21,4 +21,27 @@ export class BooksService {
     );
     return response;
   }
+
+  createBooks(datos: any){
+    const url = this.BASE_URL + "/api/books";
+    let response: Book[] = [];
+    this.httpClient.post<Book>(url, datos).subscribe(
+      (data) => {
+        console.log('entro y guardo' + data)
+        //response = data
+      } 
+    );
+    return response;
+  }
+
+  editBook(dato: any) {
+    const url = this.BASE_URL + "/api/books";
+    let response: Book[] = [];
+    this.httpClient.put(url,dato).subscribe(
+      (data) => {
+        console.log('entro y guardo' + data)
+      }
+    )
+    return response;
+  }
 }

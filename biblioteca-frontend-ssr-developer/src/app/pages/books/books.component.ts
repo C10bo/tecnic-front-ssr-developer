@@ -25,28 +25,30 @@ export class BooksComponent implements OnInit{
   constructor(private _formBuilder: FormBuilder,private booksService: BooksService, private router: Router) {
 
     this.bookFormGroups = this._formBuilder.group({
-      titulo: ["", Validators.compose([Validators.required])],
-      autor: ["", Validators.compose([Validators.required])],
-      genero: ["", Validators.compose([Validators.required])],
-      disponibilidad: [true],
+      title: ["", Validators.compose([Validators.required])],
+      author: ["", Validators.compose([Validators.required])],
+      genre: ["", Validators.compose([Validators.required])],
+      available: [true],
     }); 
   }
   assignDate(): void {
     this.createRes = {
-      titulo: this.bookFormGroups.value.titulo,
-      autor: this.bookFormGroups.value.autor,
-      genero: this.bookFormGroups.value.genero,
-      disponibilidad: this.bookFormGroups.value.disponibilidad,
+      title: this.bookFormGroups.value.title,
+      author: this.bookFormGroups.value.author,
+      genre: this.bookFormGroups.value.genre,
+      available: this.bookFormGroups.value.available,
     }
-    console.log('esto es el rest'+ JSON.stringify(this.createRes))
   }
 
   createBook(): void {
     this.assignDate();
+    this.booksService.createBooks(this.createRes);
     this.messageCorrecto =  true;
     this.bookFormGroups.reset();
     setTimeout(() => {
       this.messageCorrecto = false;
     }, 5000);
+
+    
   }
 }

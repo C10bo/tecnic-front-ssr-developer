@@ -6,6 +6,13 @@ CREATE TABLE IF NOT EXISTS BOOK (
     available INT NOT NULL
 );
 
-INSERT INTO BOOK (title, author, genre,available) VALUES ('Inferno', 'Dan Brown', 'mistery', 1);
-                                                --('Angels And Demons', 'Dan Brown', 'mistery');
-select * from book;
+INSERT INTO BOOK (title, author, genre,available) VALUES ('Inferno', 'Dan Brown', 'mistery', 1),
+                                                ('Angels And Demons', 'Dan Brown', 'mistery', 1);
+
+CREATE TABLE IF NOT EXISTS LOAN (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    id_book BIGINT NOT NULL,
+    loan_date VARCHAR(100) NOT NULL,
+    end_date VARCHAR(100),
+    client_name VARCHAR(255) NOT NULL
+);
