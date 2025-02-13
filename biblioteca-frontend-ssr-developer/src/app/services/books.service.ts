@@ -28,7 +28,6 @@ export class BooksService {
     let response: Book[] = [];
     this.httpClient.post<Book>(url, datos).subscribe(
       (data) => {
-        console.log('entro y guardo' + data)
         //response = data
       } 
     );
