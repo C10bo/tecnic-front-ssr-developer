@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BooksService } from '../../services/books.service';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { BooksService } from '../../services/books.service';
   templateUrl: './books.component.html',
   styleUrl: './books.component.css',
   standalone: true,
-  imports:[ReactiveFormsModule,FormsModule]
+  imports:[CommonModule, ReactiveFormsModule]
 })
 export class BooksComponent implements OnInit{
   

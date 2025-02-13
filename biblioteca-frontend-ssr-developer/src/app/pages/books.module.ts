@@ -9,13 +9,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     HomeComponent,
-    
   ],
   imports: [
     CommonModule,
     BooksRoutingModule,
     ReactiveFormsModule,
-    FormsModule
   ],
   providers: [
     
