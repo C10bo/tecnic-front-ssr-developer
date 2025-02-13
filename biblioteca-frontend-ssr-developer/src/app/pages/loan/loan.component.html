@@ -1,0 +1,74 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand"><i class="bi bi-book-fill"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/books/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/books/book">Libro</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/books/loan">Prestamo</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="card" style="width: 18rem;">
+      <div class="card-header">
+        Crear libro
+      </div>
+      <div class="card-body">
+        <form [formGroup]="loanFormGroups">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input class="form-control" type="text" minlength="1" maxlength="50" placeholder="Ingrese nombre"
+              formControlName="nombre" id="nombre" />
+            <samp *ngIf="!loanFormGroups.controls['nombre'].valid &&
+                              (loanFormGroups.controls['nombre'].dirty ||
+                              loanFormGroups.controls['nombre'].touched)" style="color: red;">Campo obligatorio</samp>
+          </div>
+          <div class="form-group">
+            <label for="fechaPrestamo">Fecha prestamo</label>
+            <input class="form-control" type="text" placeholder="Ingrese la fecha del Prestamo" formControlName="fechaPrestamo"
+              id="fechaPrestamo" />
+            <samp *ngIf="!loanFormGroups.controls['fechaPrestamo'].valid &&
+                          (loanFormGroups.controls['fechaPrestamo'].dirty ||
+                          loanFormGroups.controls['fechaPrestamo'].touched)" style="color: red;">Campo obligatorio</samp>
+          </div>
+          <div class="form-group">
+            <label for="libro">libro</label>
+            <input class="form-control" type="number" placeholder="Ingrese nombre del libro" formControlName="libro"
+              id="libro" />
+            <samp *ngIf="!loanFormGroups.controls['libro'].valid &&
+                              (loanFormGroups.controls['libro'].dirty ||
+                              loanFormGroups.controls['libro'].touched)" style="color: red;">Campo
+              obligatorio</samp>
+          </div>  
+          <div class="form-group">
+            <label for="fechaDevolucion">Fecha devolucion</label>
+            <input class="form-control" type="number" placeholder="Ingrese la fecha de devolucion" formControlName="fechaDevolucion"
+              id="fechaDevolucion" />
+            <samp *ngIf="!loanFormGroups.controls['fechaDevolucion'].valid &&
+                              (loanFormGroups.controls['fechaDevolucion'].dirty ||
+                              loanFormGroups.controls['fechaDevolucion'].touched)" style="color: red;">Campo
+              obligatorio</samp>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary" [disabled]="
+                        !loanFormGroups.valid
+                      ">Crear libro</button>
+        </form>
+      </div>
+      <div class="alert alert-success" role="alert" *ngIf="messageCorrecto">
+        Producto creado correctamente.
+      </div>
+    </div>
+    
+  </div>
