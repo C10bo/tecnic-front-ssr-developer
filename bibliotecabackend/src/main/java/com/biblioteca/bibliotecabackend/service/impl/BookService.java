@@ -47,8 +47,14 @@ public class BookService implements IBookService{
     @Override
     public Object updateBook(LoanModel request) {
         BookEntity book = repository.findById(request.getId());
+
+        if(book.getAvailable() == 0)
+            throw new RuntimeException("Libro prestado");
+
         book.setAvailable(request.getAvailable());
         repository.save(book);
+
+        
 
         LoanEntity loanEntity = new LoanEntity();
         loanEntity.setBookId(request.getId());

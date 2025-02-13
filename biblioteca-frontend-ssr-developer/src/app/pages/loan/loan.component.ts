@@ -30,7 +30,21 @@ export class LoanComponent {
 
     editBook() {
     
-      this.booksService.editBook(this.selectedBook);
+      this.booksService.editBook({
+        "id": this.loanFormGroups.get('libro')!.value,
+        "initDate": this.loanFormGroups.get('fechaPrestamo')!.value,
+        "endDate": this.loanFormGroups.get('fechaDevolucion')!.value,
+        "clientName": this.loanFormGroups.get('nombre')!.value,
+        "available": 0
+      }).subscribe((data) => {
+      }, (error) => {
+        console.log(error.error.message);
+      });
+      this.messageCorrecto =  true;
+    this.loanFormGroups.reset();
+    setTimeout(() => {
+      this.messageCorrecto = false;
+    }, 5000);
   
   
   

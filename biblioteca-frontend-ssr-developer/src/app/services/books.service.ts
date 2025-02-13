@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Book } from '../models/book.model';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -34,14 +35,10 @@ export class BooksService {
     return response;
   }
 
-  editBook(dato: any) {
+  editBook(dato: any): Observable<any> {
     const url = this.BASE_URL + "/api/books";
     let response: Book[] = [];
-    this.httpClient.put(url,dato).subscribe(
-      (data) => {
-        console.log('entro y guardo' + data)
-      }
-    )
-    return response;
+    this.httpClient.put(url,dato);
+    return this.httpClient.put(url,dato);
   }
 }
