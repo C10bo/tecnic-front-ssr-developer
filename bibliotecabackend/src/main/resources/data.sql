@@ -6,6 +6,6 @@ CREATE TABLE IF NOT EXISTS BOOK (
     available INT NOT NULL
 );
 
-INSERT INTO BOOK (title, author, genre) VALUES ('Inferno', 'Dan Brown', 'mistery', 1);
+INSERT INTO BOOK (title, author, genre,available) VALUES ('Inferno', 'Dan Brown', 'mistery', 1);
                                                 --('Angels And Demons', 'Dan Brown', 'mistery');
 select * from book;
