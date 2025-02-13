@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Book } from '../../models/book.model';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+
+  public books: Book[] = [];
+  public selectedProduct: Book | undefined;
+
+
+  ngOnInit(): void {
+  }
+
 
 }
