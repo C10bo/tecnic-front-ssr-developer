@@ -1,0 +1,1 @@
+# tecnic-front-ssr-developer
